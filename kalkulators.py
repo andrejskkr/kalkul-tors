@@ -18,6 +18,7 @@ def btnCommand (command):
     global number 
     global mathOp
     global num1
+    global num3
     mathOp=command
     num1=(float(e.get))
     e.delete(0,END)
