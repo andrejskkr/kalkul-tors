@@ -42,7 +42,11 @@ def Equals():
     e.insert(0,str(result))
     return 0
 
-
+def clear():
+    e.delete(0,END)
+    num1=0
+    mathOp=""
+    return 0
 
 
 
@@ -73,7 +77,7 @@ btnSub=Button(manslogs, text='-',padx='40',pady='20',command=lambda:btnCommand("
 btnequals=Button(manslogs, text='=',padx='40',pady='20',command=lambda:Equals("="))
 btnreiz=Button(manslogs, text='*',padx='40',pady='20',command=lambda:btnCommand("*"))
 btndal=Button(manslogs, text='/',padx='40',pady='20',command=lambda:btnCommand("/"))
-btnclear=Button(manslogs, text='C',padx='40',pady='20', fg="red")
+btnclear=Button(manslogs, text='C',padx='40',pady='20', fg="red", command=lambda:clear("C"))
 e=Entry(manslogs, width=15, bd=20, font=("Arial Black", 20))
 
 
