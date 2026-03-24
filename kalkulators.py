@@ -57,12 +57,14 @@ def btnClick(number):
 
 
 
+
+
 btn0=Button(manslogs, text='0',padx='40',pady='20', command=lambda:btnClick(0))
 btn1=Button(manslogs, text='1',padx='40',pady='20', command=lambda:btnClick(1))
 btn2=Button(manslogs, text='2',padx='40',pady='20', command=lambda:btnClick(2))
+btn5=Button(manslogs, text='5',padx='40',pady='20', command=lambda:btnClick(5))
 btn3=Button(manslogs, text='3',padx='40',pady='20', command=lambda:btnClick(3))
 btn4=Button(manslogs, text='4',padx='40',pady='20', command=lambda:btnClick(4))
-btn5=Button(manslogs, text='5',padx='40',pady='20', command=lambda:btnClick(5))
 btn6=Button(manslogs, text='6',padx='40',pady='20', command=lambda:btnClick(6))
 btn7=Button(manslogs, text='7',padx='40',pady='20', command=lambda:btnClick(7))
 btn8=Button(manslogs, text='8',padx='40',pady='20', command=lambda:btnClick(8))
