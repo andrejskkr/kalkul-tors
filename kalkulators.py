@@ -14,34 +14,32 @@ def btnClick(number):
     e.insert(0,newNumber) # ievieto displejā
     return 0 
 
+def btnCommand (command):
+    global number 
+    global mathOp
+    global num1
+    mathOp=command
+    num1=(float(e.get))
+    e.delete(0,END)
+    return 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def Equals():
+    global num2
+    num2=(float(e.get()))
+    result=0
+    if mathOp=="+":
+        result=num1+num2
+    elif mathOp=="-":
+        result=num1-num2
+    elif mathOp=="*":
+        result=num1*num2
+    elif mathOp=="/":
+        result=num1/num2
+    else:
+        result=0
+    e.delete(0,END)
+    e.insert(0,str(result))
+    return 0
 
 
 
@@ -69,11 +67,11 @@ btn6=Button(manslogs, text='6',padx='40',pady='20', command=lambda:btnClick(6))
 btn7=Button(manslogs, text='7',padx='40',pady='20', command=lambda:btnClick(7))
 btn8=Button(manslogs, text='8',padx='40',pady='20', command=lambda:btnClick(8))
 btn9=Button(manslogs, text='9',padx='40',pady='20', command=lambda:btnClick(9))
-btnSum=Button(manslogs, text='+',padx='40',pady='20')
-btnSub=Button(manslogs, text='-',padx='40',pady='20')
-btnequals=Button(manslogs, text='=',padx='40',pady='20')
-btnreiz=Button(manslogs, text='*',padx='40',pady='20')
-btndal=Button(manslogs, text='/',padx='40',pady='20')
+btnSum=Button(manslogs, text='+',padx='40',pady='20', command=lambda:btnCommand("+"))
+btnSub=Button(manslogs, text='-',padx='40',pady='20',command=lambda:btnCommand("-"))
+btnequals=Button(manslogs, text='=',padx='40',pady='20',command=lambda:Equals("="))
+btnreiz=Button(manslogs, text='*',padx='40',pady='20',command=lambda:btnCommand("*"))
+btndal=Button(manslogs, text='/',padx='40',pady='20',command=lambda:btnCommand("/"))
 btnclear=Button(manslogs, text='C',padx='40',pady='20', fg="red")
 e=Entry(manslogs, width=15, bd=20, font=("Arial Black", 20))
 
