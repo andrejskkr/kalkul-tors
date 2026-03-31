@@ -53,12 +53,12 @@ def clear():
     return 0
 
 # Funkcija kvadrātsaknei
-def sqrt():
+def sakne():
     global operator
     global num1
     global mathOp
     num1=(float(e.get()))
-    num1.sqrt(num1)
+    num1=sqrt(num1)
     e.delete(0,END)
     e.insert(0,num1)
     return 0
@@ -84,9 +84,9 @@ def min():
     return 0
 
 # Funkcija logaritmam
-def log():
+def logaritm():
     global operator
-    global mathOp 
+    global mathOp #matemātiskais operators
     global num1
     num1=(float(e.get()))
     num1=log(num1)
@@ -119,9 +119,9 @@ btnreiz=Button(manslogs, text='*',padx='40',pady='20',bd=6, bg="#FFE135", fg="ma
 btndal=Button(manslogs, text='/',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("/"))
 btnequals=Button(manslogs, text='=',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=Equals)
 btnclear=Button(manslogs, text='C',padx='40',pady='20',bd=6, bg="red", fg="maroon" ,font=("Arial Black", 10), command=clear)
-btnsqrt=Button(manslogs, text='√',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=sqrt)
+btnsakne=Button(manslogs, text='√',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=sakne)
 btnkap=Button(manslogs, text='^2',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=kap)
-btnlog=Button(manslogs, text='log',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=log)
+btnlogaritm=Button(manslogs, text='log',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=logaritm)
 btnmin=Button(manslogs, text='+/-',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=min)
 e=Entry(manslogs, width=15, bd=20, font=("Arial Black", 20))
 
@@ -130,7 +130,7 @@ e=Entry(manslogs, width=15, bd=20, font=("Arial Black", 20))
 # Pogu izvietojums uz kalkulātora
 
 btnclear.grid(row=1,column=0)
-btnsqrt.grid(row=1,column=1)
+btnsakne.grid(row=1,column=1)
 btnkap.grid(row=1,column=2)
 btndal.grid(row=1,column=3)
 btn7.grid(row=2,column=0)
@@ -147,7 +147,7 @@ btn3.grid(row=4,column=2)
 btnSum.grid(row=4,column=3)
 btnmin.grid(row=5,column=0)
 btn0.grid(row=5,column=1)
-btnlog.grid(row=5,column=2)
+btnlogaritm.grid(row=5,column=2)
 btnequals.grid(row=5,column=3)
 e.grid(row=0,column=0, columnspan=4)
 
