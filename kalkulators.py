@@ -76,7 +76,7 @@ def kap():
 # funkcija +/-
 def min():
     global operator
-    global mathOp
+    global mathOp #matemātiskais operators
     global num1
     num1=-(float(e.get()))
     e.delete(0,END)
@@ -86,14 +86,13 @@ def min():
 # Funkcija logaritmam
 def log():
     global operator
-    global mathOp
+    global mathOp 
     global num1
     num1=(float(e.get()))
     num1=log(num1)
     e.delete(0,END)
     e.insert(0,str(num1))
     return 0
-
 
 
 
@@ -116,9 +115,9 @@ btn8=Button(manslogs, text='8',padx='42',pady='20',bd=6, bg="light blue", fg="ma
 btn9=Button(manslogs, text='9',padx='46',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(9))
 btnSum=Button(manslogs, text='+',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("+"))
 btnSub=Button(manslogs, text='-',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("-"))
-btnequals=Button(manslogs, text='=',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=Equals)
 btnreiz=Button(manslogs, text='*',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("*"))
 btndal=Button(manslogs, text='/',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("/"))
+btnequals=Button(manslogs, text='=',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=Equals)
 btnclear=Button(manslogs, text='C',padx='40',pady='20',bd=6, bg="red", fg="maroon" ,font=("Arial Black", 10), command=clear)
 btnsqrt=Button(manslogs, text='√',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=sqrt)
 btnkap=Button(manslogs, text='^2',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=kap)
