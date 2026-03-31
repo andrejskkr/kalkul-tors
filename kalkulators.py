@@ -1,12 +1,13 @@
 from tkinter import*
 from math import*
-import tkinter as tk
+import tkinter as tk #bibliotēkas
 
+#Loga izveide
 manslogs=Tk()
 manslogs.title('Kalkulators')
 
 
-
+# Funkcija cipariem
 def btnClick(number):
     current=e.get() # nolasa esošo skaitli
     e.delete(0,END) # nodzēš
@@ -14,6 +15,7 @@ def btnClick(number):
     e.insert(0,newNumber) # ievieto displejā
     return 0 
 
+# Funkcija darbībām +,-,*,/
 def btnCommand (command):
     global number 
     global mathOp
@@ -24,6 +26,7 @@ def btnCommand (command):
     e.delete(0,END)
     return 0
 
+# Funkcija vienādības zīmei
 def Equals():
     global num2
     num2=(float(e.get()))
@@ -42,12 +45,14 @@ def Equals():
     e.insert(0,str(result))
     return 0
 
+# Funkcija notīrīšanas pogai
 def clear():
     e.delete(0,END)
     num1=0
     mathOp=""
     return 0
 
+# Funkcija kvadrātsaknei
 def sqrt():
     global operator
     global num1
@@ -58,6 +63,7 @@ def sqrt():
     e.insert(0,num1)
     return 0
 
+# Funkcija kāpināšanai kvadrātā
 def kap():
     global operator
     global num1
@@ -67,11 +73,23 @@ def kap():
     e.insert(0,num1)
     return 0
 
+# funkcija +/-
 def min():
     global operator
     global mathOp
     global num1
     num1=-(float(e.get()))
+    e.delete(0,END)
+    e.insert(0,str(num1))
+    return 0
+
+# Funkcija logaritmam
+def log():
+    global operator
+    global mathOp
+    global num1
+    num1=(float(e.get()))
+    num1=log(num1)
     e.delete(0,END)
     e.insert(0,str(num1))
     return 0
@@ -84,33 +102,33 @@ def min():
 
 
 
+#definē katru pogu
 
-
-btn0=Button(manslogs, text='0',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(0))
-btn1=Button(manslogs, text='1',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(1))
-btn2=Button(manslogs, text='2',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(2))
-btn5=Button(manslogs, text='5',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(5))
-btn3=Button(manslogs, text='3',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(3))
-btn4=Button(manslogs, text='4',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(4))
-btn6=Button(manslogs, text='6',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(6))
-btn7=Button(manslogs, text='7',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(7))
-btn8=Button(manslogs, text='8',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(8))
-btn9=Button(manslogs, text='9',padx='40',pady='20', bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(9))
-btnSum=Button(manslogs, text='+',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("+"))
-btnSub=Button(manslogs, text='-',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("-"))
-btnequals=Button(manslogs, text='=',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=Equals)
-btnreiz=Button(manslogs, text='*',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("*"))
-btndal=Button(manslogs, text='/',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("/"))
-btnclear=Button(manslogs, text='C',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=clear)
-btnsqrt=Button(manslogs, text='+',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=sqrt)
-btnkap=Button(manslogs, text='+',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=kap)
-btnlog=Button(manslogs, text='+',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=log)
-btnmin=Button(manslogs, text='+',padx='40',pady='20', bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=min)
+btn0=Button(manslogs, text='0',padx='42',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(0))
+btn1=Button(manslogs, text='1',padx='42',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(1))
+btn2=Button(manslogs, text='2',padx='42',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(2))
+btn5=Button(manslogs, text='5',padx='42',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(5))
+btn3=Button(manslogs, text='3',padx='46',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(3))
+btn4=Button(manslogs, text='4',padx='42',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(4))
+btn6=Button(manslogs, text='6',padx='46',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(6))
+btn7=Button(manslogs, text='7',padx='42',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(7))
+btn8=Button(manslogs, text='8',padx='42',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(8))
+btn9=Button(manslogs, text='9',padx='46',pady='20',bd=6, bg="light blue", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnClick(9))
+btnSum=Button(manslogs, text='+',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("+"))
+btnSub=Button(manslogs, text='-',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("-"))
+btnequals=Button(manslogs, text='=',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=Equals)
+btnreiz=Button(manslogs, text='*',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("*"))
+btndal=Button(manslogs, text='/',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=lambda:btnCommand("/"))
+btnclear=Button(manslogs, text='C',padx='40',pady='20',bd=6, bg="red", fg="maroon" ,font=("Arial Black", 10), command=clear)
+btnsqrt=Button(manslogs, text='√',padx='42',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=sqrt)
+btnkap=Button(manslogs, text='^2',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=kap)
+btnlog=Button(manslogs, text='log',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=log)
+btnmin=Button(manslogs, text='+/-',padx='40',pady='20',bd=6, bg="#FFE135", fg="maroon" ,font=("Arial Black", 10), command=min)
 e=Entry(manslogs, width=15, bd=20, font=("Arial Black", 20))
 
 
 
-
+# Pogu izvietojums uz kalkulātora
 
 btnclear.grid(row=1,column=0)
 btnsqrt.grid(row=1,column=1)
